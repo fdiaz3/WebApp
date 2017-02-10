@@ -4,10 +4,7 @@ import edu.ycp.cs320.fdiaz.model.Numbers;
 public class AddNumbersController {
 	private Numbers model;
 	
-	public void setModel(Numbers model, Double first, Double second, Double third) {
-		model.setFirst(first);
-		model.setSecond(second);
-		model.setThird(third);
+	public void setModel(Numbers model) {
 		this.model = model;
 		
 	}

@@ -23,7 +23,7 @@ public class GuessingGameServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 		if(req.getParameter("return") != null){
-			req.getRequestDispatcher("/_view/index.jsp").include(req, resp);
+			resp.sendRedirect(req.getContextPath() + "/_view/index.jsp");
 		}
 		else{
 			GuessingGame model = new GuessingGame();

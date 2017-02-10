@@ -3,32 +3,21 @@ package edu.ycp.cs320.fdiaz.model;
 public class Numbers {
 	private Double first, second, third;
 	
-	public Numbers() {
+	public Numbers(Double first, Double second, Double third) {
+			this.first = first;
+			this.second = second;
+			this.third = third;
+		
 	}
-	
-	
-	public void setFirst(Double first) {
-		this.first = first;
-	}
-	public void setSecond(Double second) {
-		this.second = second;
-	}
-	public void setThird(Double third) {
-		this.third = third;
-	}
-	
-	
-	public Double getFirst() {
+	public Double getFirst(){
 		return first;
 	}
-	public Double getSecond() {
+	public Double getSecond(){
 		return second;
 	}
-	public Double getThird() {
+	public Double getThird(){
 		return third;
 	}
-	
-	
 		
 	public Double addNumbers() {
 		return (first + second + third);

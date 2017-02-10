@@ -6,9 +6,6 @@
 	<head>
 		<title>Add Numbers</title>
 		<style type="text/css">
-		form{
-			padding: 15% 40% 15% 40%;
-		}
 		.error {
 			color: red;
 		}

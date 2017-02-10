@@ -6,9 +6,7 @@
 	<head>
 		<title>Multiply Numbers</title>
 		<style type="text/css">
-		form{
-			padding: 15% 40% 15% 40%;
-		}
+		
 		.error {
 			color: red;
 		}

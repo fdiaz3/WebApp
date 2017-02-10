@@ -13,6 +13,6 @@
 				<input name="mult" type="submit" value="Multiply Numbers" />
 			</div>
 		</form>
-		This is the index view jsp
+		Welcome Back!!
 	</body>
 </html>

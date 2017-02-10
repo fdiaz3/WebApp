@@ -23,7 +23,7 @@ public class MultiplyNumbersServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 		if(req.getParameter("return") != null){
-			req.getRequestDispatcher("/_view/index.jsp").include(req, resp);
+			resp.sendRedirect(req.getContextPath() + "/_view/index.jsp");
 		}
 		else{
 			
@@ -39,8 +39,8 @@ public class MultiplyNumbersServlet extends HttpServlet {
 					errorMessage = "Please specify three numbers";
 				} else {
 					MultiplyNumbersController controller = new MultiplyNumbersController();
-					Numbers model = new Numbers();
-					controller.setModel(model, first, second, third);
+					Numbers model = new Numbers(first, second, third);
+					controller.setModel(model);
 					result = controller.multiply();
 				}
 			} catch (NumberFormatException e) {

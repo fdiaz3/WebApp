@@ -25,11 +25,11 @@ public class IndexServlet extends HttpServlet {
 			throws ServletException, IOException {
 		
 			if (req.getParameter("gg") != null) {
-				req.getRequestDispatcher("/_view/guessingGame.jsp").include(req, resp);
+				resp.sendRedirect(req.getContextPath() + "/_view/guessingGame.jsp");
 			} else if (req.getParameter("add") != null) {
-				req.getRequestDispatcher("/_view/addNumbers.jsp").include(req, resp);
+				resp.sendRedirect(req.getContextPath() + "/_view/addNumbers.jsp");
 			} else if (req.getParameter("mult") != null) {
-				req.getRequestDispatcher("/_view/MultiplyNumbers.jsp").include(req, resp);
+				resp.sendRedirect(req.getContextPath() + "/_view/MultiplyNumbers.jsp");
 			} else {
 				throw new ServletException("Unknown command");
 			}

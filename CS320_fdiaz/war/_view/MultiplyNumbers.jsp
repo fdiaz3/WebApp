@@ -11,6 +11,10 @@
 			color: red;
 		}
 		
+		body {
+			padding: 10%;
+		}
+		
 		td.label {
 			text-align: right;
 		}

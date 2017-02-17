@@ -5,6 +5,12 @@
 <html>
 	<head>
 		<title>Guessing Game</title>
+		<style type="text/css">
+		
+		body {
+			padding: 10%;
+		}
+		</style>
 	</head>
 
 	<body>

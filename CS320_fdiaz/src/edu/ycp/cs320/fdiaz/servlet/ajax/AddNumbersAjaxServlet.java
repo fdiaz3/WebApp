@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import edu.ycp.cs320.fdiaz.controller.AddNumbersController;
+import edu.ycp.cs320.fdiaz.model.Numbers;
 
 public class AddNumbersAjaxServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -15,7 +16,7 @@ public class AddNumbersAjaxServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
-		doRequest(req, resp);
+		req.getRequestDispatcher("/addNumbersAjax.html").forward(req, resp);
 	}
 	
 	@Override
@@ -29,15 +30,17 @@ public class AddNumbersAjaxServlet extends HttpServlet {
 		Double first = getDouble(req, "first");
 		Double second = getDouble(req, "second");
 		Double third = getDouble(req, "third");
-		
+//		System.out.printf("%f, %f, %f",first, second, third);
 		// Check whether parameters are valid
 		if (first == null || second == null || third == null) {
 			badRequest("Bad parameters", resp);
 			return;
 		}
-		
+		Numbers model = new Numbers(first, second, third);
 		// Use a controller to process the request
+		
 		AddNumbersController controller = new AddNumbersController();
+		controller.setModel(model);
 		Double result = controller.add();
 		
 		// Send back a response

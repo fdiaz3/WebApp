@@ -23,7 +23,7 @@ public class AddNumbersServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 		if(req.getParameter("return") != null){
-			resp.sendRedirect(req.getContextPath() + "/_view/index.jsp");
+			resp.sendRedirect(req.getContextPath() + "/index");
 		}
 		else{
 						

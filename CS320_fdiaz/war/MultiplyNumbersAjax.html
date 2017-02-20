@@ -26,7 +26,8 @@
 				$("#MultiplyNumbersButton").click(function() {
 					$.ajax({
 						type: 'POST',
-						url: '/lab12/ajax/MultiplyNumbers',
+						dataType: 'text',
+						url: '/fdiaz/ajax/MultiplyNumbers',
 						data: { first: $("#firstNumberElt").val(), second: $("#secondNumberElt").val(), third: $("thirdNumberElt").val() },
 						success:
 							function(data, textStatus, jqXHR) {
@@ -36,35 +37,38 @@
 							function(jqXHR, textStatus, errorThrown) {
 								$("#errorElt").text(textStatus + ": " + errorThrown);
 							},
-						dataType: 'text'
+						
 					});
 				});
 			});
 		</script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+		
 	</head>
 
 	<body>
+		<div ng-app="">
 		<table>
 			<tr>
 				<td class="label">First number:</td>
-				<td><input id="firstNumberElt" type="text" size="12" /></td>
+				<td><input id="firstNumberElt" type="number" size="12" ng-model="fst" placeholder="Enter first number here"/></td>
 			</tr>
 			<tr>
 				<td class="label">Second number:</td>
-				<td><input id="secondNumberElt" type="text" size="12" /></td>
+				<td><input id="secondNumberElt" type="number" size="12" ng-model="sec" placeholder="Enter second number here"/></td>
 			</tr>
 			<tr>
 				<td class="label">Third number:</td>
-				<td><input id="thirdNumberElt" type="text" size="12" /></td>
+				<td><input id="thirdNumberElt" type="number" size="12" ng-model="thr" placeholder="Enter third number here"/></td>
 			</tr>
 			<tr>
-				<td class="label">Result:</td>
+				<td class="label">Result: {{fst + sec + thr}}</td>
 				<td><span id="resultElt"></span></td>
 			</tr>
 		</table>
-		<div>
-			<button id="MultiplyNumbersButton">Add Numbers</button>
+		//Removed Button
 		</div>
+		
 		<div>
 			<span id="errorElt" class="error"></span>
 		</div>
